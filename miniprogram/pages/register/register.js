@@ -119,27 +119,27 @@ Page({
           }
 
           for(let key in this.data){
-              app.userInfo[key]=this.data[key];
+              app.UserProfile[key]=this.data[key];
           }
-          app.userInfo['avatarUrl']=app.globalData['userPhoto'];
-          app.userInfo['nickName']=app.globalData['nickName'];
+          app.UserProfile['avatarUrl']=app.globalData['userPhoto'];
+          app.UserProfile['nickName']=app.globalData['nickName'];
           
           db.collection('users').add({
             data:{
-                nickName: app.userInfo['nickName'],
-                avatarUrl: app.userInfo['avatarUrl'],
-                xh: app.userInfo['xh'],
-                nj: app.userInfo['nj'],
-                xy: app.userInfo['xy'],
-                zy: app.userInfo['zy'],
-                nl: app.userInfo['nl'],
-                lxfs: app.userInfo['lxfs'],
-                zwms: app.userInfo['zwms'],
+                nickName: app.UserProfile['nickName'],
+                avatarUrl: app.UserProfile['avatarUrl'],
+                xh: app.UserProfile['xh'],
+                nj: app.UserProfile['nj'],
+                xy: app.UserProfile['xy'],
+                zy: app.UserProfile['zy'],
+                nl: app.UserProfile['nl'],
+                lxfs: app.UserProfile['lxfs'],
+                zwms: app.UserProfile['zwms'],
                 num : 1
             }
           }).then((res)=>{
               db.collection('users').doc(res._id).get().then((res)=>{
-                  app.userInfo = Object.assign(app.userInfo, res.data);
+                  app.UserProfile = Object.assign(app.UserProfile, res.data);
               });
               Toast.success('注册成功!');
               //app.globalData["permission"] = true;

@@ -10,7 +10,7 @@ Page({
         Img:"https://images.pexels.com/photos/3662824/pexels-photo-3662824.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         btninfo:"微信用户实名登录",
         //permission:false,
-        userinfo:{},
+        UserProfile:{},
         list: [{
           name: 'shake',
           color: 'mauve'
@@ -31,14 +31,14 @@ Page({
         }, 1000)
       },
 
-    handleUserInfo:function(e){
+    handleUserProfile:function(e){
       // 用户先授权登录 获得openid  再根据id去数据库查询 若查询结果不存在则转去完善用户信息 存在则继续现在开始
-      //console.log(e.detail.userInfo.avatarUrl);
-      const {userInfo} = e.detail;
-      wx.setStorageSync('userinfo', userInfo);
-      app.globalData['userPhoto'] = e.detail.userInfo.avatarUrl;
-      app.globalData['nickName'] = e.detail.userInfo.nickName;
-      app.globalData['gender'] = e.detail.userInfo.gender;
+      //console.log(e.detail.UserProfile.avatarUrl);
+      const {UserProfile} = e.detail;
+      wx.setStorageSync('UserProfile', UserProfile);
+      app.globalData['userPhoto'] = e.detail.UserProfile.avatarUrl;
+      app.globalData['nickName'] = e.detail.UserProfile.nickName;
+      app.globalData['gender'] = e.detail.UserProfile.gender;
 
       
       
@@ -58,12 +58,12 @@ Page({
           } else 
             {
               
-              if (this.data.userinfo.length != 0) {
+              if (this.data.UserProfile.length != 0) {
                 app.globalData["permission"] = true
               }
 
               if (app.globalData["permission"] == true) {
-                app.userInfo = Object.assign(app.userInfo, res.data[0]);
+                app.UserProfile = Object.assign(app.UserProfile, res.data[0]);
                 wx.reLaunch({
                   url: '../index/index',
                 })
@@ -92,12 +92,12 @@ Page({
         //     })
         // }
         // this.setData({
-        //     Img:userinfo.avatarUrl,
-        //     btninfo:userinfo.nickName + " 现在开始",
+        //     Img:UserProfile.avatarUrl,
+        //     btninfo:UserProfile.nickName + " 现在开始",
         //     permission:true
         // })
-        // app.userInfo['userPhoto'] = userinfo.avatarUrl;
-        // app.userInfo['nickName'] = userinfo.nickName;
+        // app.UserProfile['userPhoto'] = UserProfile.avatarUrl;
+        // app.UserProfile['nickName'] = UserProfile.nickName;
         
     },
 
@@ -119,11 +119,11 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        const userinfo = wx.getStorageSync("userinfo");
-        var arr = Object.keys(userinfo);
+        const UserProfile = wx.getStorageSync("UserProfile");
+        var arr = Object.keys(UserProfile);
         if(arr.length == 0) return;
         this.setData({
-            userinfo
+            UserProfile
         })
         if(app.globalData['permission'] == true) {
             wx.reLaunch({
@@ -131,8 +131,8 @@ Page({
             })
         }
         this.setData({
-            Img:userinfo.avatarUrl,
-            btninfo:userinfo.nickName + " 现在开始"
+            Img:UserProfile.avatarUrl,
+            btninfo:UserProfile.nickName + " 现在开始"
         })
         app.globalData['permission'] = false;
         

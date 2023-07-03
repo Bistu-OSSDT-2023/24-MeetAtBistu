@@ -8,7 +8,7 @@ Page({
   data: {
     active: 0,
     cardCur: 0,
-    userinfo:{},
+    UserProfile:{},
     toggleDelay: false,
     swiperList: [{
       id: '校训',
@@ -271,11 +271,11 @@ Page({
   onShow: function () {
     this.getTabBar().init();
     
-    const userinfo = wx.getStorageSync("userinfo");
-        var arr = Object.keys(userinfo);
+    const UserProfile = wx.getStorageSync("UserProfile");
+        var arr = Object.keys(UserProfile);
         if(arr.length == 0) return;
         this.setData({
-            userinfo
+            UserProfile
         })
     
   },

@@ -9,7 +9,7 @@ Page({
      */
     data: {
         cur_acti:[],
-        UserInfo:{}
+        UserProfile:{}
     },
 
     /**
@@ -17,7 +17,7 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            UserInfo:app.globalData
+            UserProfile:app.globalData
         })
     },
 

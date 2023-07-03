@@ -1,6 +1,6 @@
 <!--pages/myactivity/myactivity.wxml-->
 <view class="cu-bar bg-black search">
-				<view class="cu-avatar round" style="background-image:url({{UserInfo.avatarUrl}});"></view>
+				<view class="cu-avatar round" style="background-image:url({{UserProfile.avatarUrl}});"></view>
 				<view class="content">
 					MAB - 我的
 				</view>

@@ -1,6 +1,6 @@
 <!--pages/act_detail/act_detail.wxml-->
 <view class="cu-bar bg-black search">
-  <view class="cu-avatar round" style="background-image:url({{UserInfo.userPhoto}});"></view>
+  <view class="cu-avatar round" style="background-image:url({{UserProfile.userPhoto}});"></view>
 				<view class="content">
 					MAB - 活动详情
 				</view>
