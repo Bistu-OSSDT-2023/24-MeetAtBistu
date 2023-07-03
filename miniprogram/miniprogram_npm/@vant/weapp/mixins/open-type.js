@@ -7,8 +7,8 @@ exports.openType = Behavior({
     openType: String,
   },
   methods: {
-    bindGetUserInfo: function (event) {
-      this.$emit('getuserinfo', event.detail);
+    bindgetUSerProfile: function (event) {
+      this.$emit('getUSerProfile', event.detail);
     },
     bindContact: function (event) {
       this.$emit('contact', event.detail);

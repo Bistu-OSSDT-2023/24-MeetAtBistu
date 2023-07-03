@@ -21,7 +21,7 @@ Component({
       {
         "url":"/pages/moments/moments",
         "icon":"notes-o",
-        "text":"瞬间"
+        "text":"朋友圈"
       },
       {
         "url": "/pages/setting/setting",

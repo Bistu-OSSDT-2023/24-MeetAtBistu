@@ -33,7 +33,7 @@
       hover-class="van-action-sheet__item--hover"
       data-index="{{ index }}"
       bind:tap="onSelect"
-      bindgetuserinfo="bindGetUserInfo"
+      bindgetuserProfile="bindGetUserProfile"
       bindcontact="bindContact"
       bindgetphonenumber="bindGetPhoneNumber"
       binderror="bindError"

@@ -73,13 +73,13 @@
         "scene": null
       },
       {
-        "name": "瞬间",
+        "name": "朋友圈",
         "pathName": "pages/moments/moments",
         "query": "",
         "scene": null
       },
       {
-        "name": "创建瞬间",
+        "name": "发布朋友圈",
         "pathName": "pages/create_mom/create_mom",
         "scene": null
       }
@@ -126,13 +126,13 @@
           "scene": null
         },
         {
-          "name": "瞬间",
+          "name": "朋友圈",
           "pathName": "pages/moments/moments",
           "query": "",
           "scene": null
         },
         {
-          "name": "创建瞬间",
+          "name": "发布朋友圈",
           "pathName": "pages/create_mom/create_mom",
           "query": "",
           "scene": null
@@ -152,9 +152,9 @@
       ]
     }
   },
-  "appid": "wxa1a6911b9e055583",
+  "appid": "wx73f460b59b37db1d",
   "compileType": "miniprogram",
-  "libVersion": "2.32.3",
+  "libVersion": "2.25.3",
   "srcMiniprogramRoot": "miniprogram/",
   "packOptions": {
     "ignore": [],
@@ -163,5 +163,6 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }

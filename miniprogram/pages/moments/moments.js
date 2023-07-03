@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userinfo:{},
+        UserProfile:{},
         space:"    ",
         momentsList:[
             
@@ -24,7 +24,7 @@ Page({
     onLoad: function (options) {
         this.getTabBar().init();
         this.setData({
-            userinfo: app.userInfo
+            UserProfile: app.UserProfile
         })
         db.collection('moments').where({
           }).get().then( res=>{
