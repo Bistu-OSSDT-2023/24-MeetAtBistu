@@ -9,7 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        UserProfile:{},
+        UserInfo:{},
         act:[],
         myacti:[],
         join_list:[],
@@ -19,13 +19,13 @@ Page({
          
          var openid = ""
         db.collection('join_in').where({
-            _openid : this.data.UserProfile['_openid'],
+            _openid : this.data.UserInfo['_openid'],
             activity : e.currentTarget.id
         }).get({}).then(res => {
             this.data.myacti.forEach((value,index)=> {
                 if (e.currentTarget.id == value._id) {
                     openid = value._openid
-                    if (value._openid == app.UserProfile['_openid']) {
+                    if (value._openid == app.userInfo['_openid']) {
                         db.collection('acti').doc(e.currentTarget.id).remove({
                         })
                     }
@@ -66,7 +66,7 @@ Page({
      */
     onLoad: async function () {
         this.setData({
-            UserProfile:app.UserProfile
+            UserInfo:app.userInfo
         });
         this.getTabBar().init();
         
@@ -80,7 +80,7 @@ Page({
     },
     toDetail(e){
         this.setData({
-            UserProfile: app.UserProfile
+            userinfo: app.userInfo
         });
          
   
@@ -110,7 +110,7 @@ Page({
         const acti = [];
         const resList = await Promise.all([
             db.collection('join_in').where({
-                _openid : app.UserProfile["_openid"],
+                _openid : app.userInfo["_openid"],
             }).get({}).then(res => {
                 
                 that.setData({
@@ -136,7 +136,7 @@ Page({
                 return this.data.act;
             }),
             db.collection('acti').where({
-                _openid : app.UserProfile["_openid"],
+                _openid : app.userInfo["_openid"],
             }).get().then( res=>{
                 res.data.reverse();
                 that.setData({

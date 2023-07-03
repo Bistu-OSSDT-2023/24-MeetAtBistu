@@ -9,14 +9,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        UserProfile:{},
+        UserInfo:{},
         cur_act:"",
         activities:[]
     },
 
     toDetail:function(e){
         this.setData({
-            UserProfile: app.UserProfile
+            userinfo: app.userInfo
         });
         
         app.globalData['target_id']=e.currentTarget.id;
@@ -36,7 +36,7 @@ Page({
     onLoad: function (options) {
 
         this.setData({
-            UserProfile:app.UserProfile,
+            UserInfo:app.userInfo,
             cur_act:app.globalData['target_act']
         })
     },
@@ -70,7 +70,7 @@ Page({
             }
         })
         db.collection('join_in').where({
-            _openid : this.data.UserProfile['_openid'],
+            _openid : this.data.UserInfo['_openid'],
             activity : e.currentTarget.id
         }).get({}).then(res => {
             

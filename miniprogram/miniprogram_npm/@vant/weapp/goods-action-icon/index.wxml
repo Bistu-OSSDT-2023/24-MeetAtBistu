@@ -18,7 +18,7 @@
   binderror="bindError"
   bindcontact="bindContact"
   bindopensetting="bindOpenSetting"
-  bindgetuserProfile="bindGetUserProfile"
+  bindgetuserinfo="bindGetUserInfo"
   bindgetphonenumber="bindGetPhoneNumber"
   bindlaunchapp="bindLaunchApp"
 >

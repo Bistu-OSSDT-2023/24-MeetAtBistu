@@ -113,12 +113,12 @@ Page({
               }
             }
             for(let key in this.data){
-                app.UserProfile[key]=this.data[key];
+                app.userInfo[key]=this.data[key];
             }
 
-            app.UserProfile['nickName']=app.globalData['nickName']; 
-            app.UserProfile['avatarUrl']=app.globalData['userPhoto'];
-            var type = app.UserProfile['hdlx']
+            app.userInfo['nickName']=app.globalData['nickName']; 
+            app.userInfo['avatarUrl']=app.globalData['userPhoto'];
+            var type = app.userInfo['hdlx']
             var photo
             if (type == '演出') 
                 photo='https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?cs=srgb&dl=pexels-monica-silvestre-713149.jpg&fm=jpg'
@@ -153,16 +153,16 @@ Page({
 
             db.collection('acti').add({
               data:{
-                  nickName: app.UserProfile['nickName'],
-                  avatarUrl: app.UserProfile['avatarUrl'],
-                  hdlx: app.UserProfile['hdlx'],
-                  hdbt: app.UserProfile['hdbt'],
-                  ksrq: app.UserProfile['ksrq'],
-                  kssj: app.UserProfile['kssj'],
-                  jssjHour: app.UserProfile['jssjHour'],
-                  jssjMin: app.UserProfile['jssjMin'],
-                  cxsc: app.UserProfile['cxsc'],
-                  hdnr: app.UserProfile['hdnr'],
+                  nickName: app.userInfo['nickName'],
+                  avatarUrl: app.userInfo['avatarUrl'],
+                  hdlx: app.userInfo['hdlx'],
+                  hdbt: app.userInfo['hdbt'],
+                  ksrq: app.userInfo['ksrq'],
+                  kssj: app.userInfo['kssj'],
+                  jssjHour: app.userInfo['jssjHour'],
+                  jssjMin: app.userInfo['jssjMin'],
+                  cxsc: app.userInfo['cxsc'],
+                  hdnr: app.userInfo['hdnr'],
                   cyrs: 1,
                   act_photo: photo
                   
@@ -174,7 +174,7 @@ Page({
                     }
                 })
                 // db.collection('acti').doc(res._id).get().then((res)=>{
-                //     app.UserProfile = Object.assign(app.UserProfile, res.data);
+                //     app.userInfo = Object.assign(app.userInfo, res.data);
                     
                 // });
                 Toast.success('活动创建成功!');
@@ -186,7 +186,7 @@ Page({
         },
     onLoad: function (options) {
         this.setData({
-            UserProfile:app.globalData
+            UserInfo:app.globalData
         })
     },
 

@@ -1,8 +1,8 @@
 
 <view class="cu-bar bg-black search">
-				<view class="cu-avatar round" style="background-image:url({{UserProfile.avatarUrl}});"></view>
+				<view class="cu-avatar round" style="background-image:url({{UserInfo.avatarUrl}});"></view>
 				<view class="content">
-					MAB - {{cur_act}}
+					Kindred Spirit - {{cur_act}}
 				</view>
 </view>
 <view wx:if="{{activities.length==0}}">

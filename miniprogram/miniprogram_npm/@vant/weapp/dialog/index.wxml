@@ -58,7 +58,7 @@
       app-parameter="{{ appParameter }}"
 
       bind:click="onConfirm"
-      bindgetuserProfile="bindGetUserProfile"
+      bindgetuserinfo="bindGetUserInfo"
       bindcontact="bindContact"
       bindgetphonenumber="bindGetPhoneNumber"
       binderror="bindError"
@@ -100,7 +100,7 @@
       app-parameter="{{ appParameter }}"
 
       bind:click="onConfirm"
-      bindgetuserProfile="bindGetUserProfile"
+      bindgetuserinfo="bindGetUserInfo"
       bindcontact="bindContact"
       bindgetphonenumber="bindGetPhoneNumber"
       binderror="bindError"

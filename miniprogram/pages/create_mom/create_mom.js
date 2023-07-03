@@ -63,8 +63,8 @@ Page({
         const moments = {
             time : currenTime,
             device : device,
-            nickName: app.UserProfile['nickName'],
-            openid: app.UserProfile['_openid'],
+            nickName: app.userInfo['nickName'],
+            openid: app.userInfo['_openid'],
             avatarUrl: app.globalData['userPhoto'],
             content: this.data.textareaAValue
         }
@@ -77,7 +77,7 @@ Page({
         if(that.data.imgList.length > 0) {
           
             that.data.imgList.forEach((value, index) => {
-              const cloudPath = "moments/"  + app.UserProfile['_openid'] + Math.random().toString(36).slice(-6) + ".jpg";
+              const cloudPath = "moments/"  + app.userInfo['_openid'] + Math.random().toString(36).slice(-6) + ".jpg";
                 wx.cloud.uploadFile({
                     filePath: value,
                     cloudPath: cloudPath,
