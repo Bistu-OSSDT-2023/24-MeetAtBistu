@@ -11,42 +11,42 @@ Page({
     userinfo:{},
     toggleDelay: false,
     swiperList: [{
-      id: '学习',
+      id: '校训',
       type: 'image',
-      url:'http://article.fd.zol-img.com.cn/t_s640x2000/g4/M06/0A/08/Cg-4y1UH3GiILebHAAFXPMRDttIAAW4fgN4pf0AAVdU053.jpg'
+      url:'https://img0.baidu.com/it/u=597137486,1073746299&fm=253&fmt=auto&app=138&f=JPEG?w=600&h=399'
       //url:'https://cdn.pixabay.com/photo/2016/09/08/21/09/piano-1655558__340.jpg'
       //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
     }, {
-      id: '购物',
+      id: '1',
       type: 'image',
-      url:'https://img1.qunarzz.com/travel/d1/1601/2d/2d33f2ad520666f7.jpg_r_720x480x95_89ab886b.jpg'
+      url:'https://img1.baidu.com/it/u=2027105550,3696655084&fm=253&fmt=auto?w=475&h=356'
       //url:'https://cdn.pixabay.com/photo/2020/01/21/20/27/theater-4783908_960_720.jpg'
         //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
     }, {
-      id: '讲座',
+      id: '2',
       type: 'image',
-      url:'https://cdn.pixabay.com/photo/2019/02/10/09/21/lecture-3986809_960_720.jpg'
+      url:'https://img1.baidu.com/it/u=2532522990,4039901975&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500'
       //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
     }, {
-      id: '其它',
+      id: '3',
       type: 'image',
-      url:'https://cdn.pixabay.com/photo/2017/10/27/16/31/team-2894828__340.jpg'
+      url:'https://img1.baidu.com/it/u=4237788929,2643213441&fm=253&fmt=auto&app=138&f=JPEG?w=640&h=427'
       //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
     }, {
-      id: '游泳',
+      id: '4',
       type: 'image',
-      url:'https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+      url:'https://img1.baidu.com/it/u=4155771574,1506698019&fm=253&fmt=auto&app=120&f=JPEG?w=641&h=481'
       //url:'https://images.pexels.com/photos/2956376/pexels-photo-2956376.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
      //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
     }, {
-      id: '游戏',
+      id: '5',
       type: 'image',
-      url:'https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+      url:'https://img0.baidu.com/it/u=1280531071,1235015118&fm=253&fmt=auto&app=138&f=JPEG?w=700&h=341'
       //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
     }, {
-      id: '球类',
+      id: '6',
       type: 'image',
-      url:'https://img.cc0.cn/pixabay/2019102906494764718.jpg!cc0.cn.jpg'
+      url:'https://img1.baidu.com/it/u=4040199802,2791476159&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=333'
       //url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
 
