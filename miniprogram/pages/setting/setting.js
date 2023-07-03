@@ -34,18 +34,18 @@ Page({
         oldxy:"",
         oldzy:"",
         activeNames: ['1'],
-        Userinfo:{},  
-        xh:app.Userinfo['xh'],
-        nj:app.Userinfo['nj'],
-        xy:app.Userinfo['xy'],
-        zy:app.Userinfo['zy'],
-        nl:app.Userinfo['nl'],
-        lxfs:app.Userinfo['lxfs'],
-        zwms:app.Userinfo['zwms'],
+        userinfo:{},  
+        xh:app.userInfo['xh'],
+        nj:app.userInfo['nj'],
+        xy:app.userInfo['xy'],
+        zy:app.userInfo['zy'],
+        nl:app.userInfo['nl'],
+        lxfs:app.userInfo['lxfs'],
+        zwms:app.userInfo['zwms'],
         njbottom: false,
         xybottom: false,
         grades: ['2015','2016','2017','2018','2019','2020'],
-        permmsion:true,
+        permmsion:false,
         disabled:true,
         zwmsdisable:true,
         msg:"修改信息",
@@ -66,8 +66,8 @@ Page({
           ],
     },
     modifyBtn(e) {
-        var openid = app.Userinfo["_openid"]
-        var id = app.Userinfo["_id"]
+        var openid = app.userInfo["_openid"]
+        var id = app.userInfo["_id"]
         
         db.collection('users').where({_openid : openid}).get({}).then(res => {
                //如果查询成功的话  
@@ -126,9 +126,9 @@ Page({
                       }).then((res)=>{
                       
                     db.collection('users').where({
-                        _id : app.Userinfo["_id"]
+                        _id : app.userInfo["_id"]
                     }).get().then((res)=>{
-                        app.Userinfo = Object.assign(app.Userinfo, res.data[0]);
+                        app.userInfo = Object.assign(app.userInfo, res.data[0]);
                         if(this.data['nj'] == "" || this.data['xh'] == ""|| this.data['lxfs'] == ""|| this.data['xy'] == ""|| this.data['zy'] == ""|| this.data['nl'] == "") {
                             Toast.fail('必填不能为空');
                             return
@@ -140,14 +140,14 @@ Page({
                         }
                             this.setData({
                                 permmsion:false,
-                                xh:app.Userinfo['xh'],
-                                nj:app.Userinfo['nj'],
-                                xy:app.Userinfo['xy'],
-                                zy:app.Userinfo['zy'],
-                                nl:app.Userinfo['nl'],
-                                lxfs:app.Userinfo['lxfs'],
-                                zwms:app.Userinfo['zwms'],
-                                num:app.Userinfo['num']
+                                xh:app.userInfo['xh'],
+                                nj:app.userInfo['nj'],
+                                xy:app.userInfo['xy'],
+                                zy:app.userInfo['zy'],
+                                nl:app.userInfo['nl'],
+                                lxfs:app.userInfo['lxfs'],
+                                zwms:app.userInfo['zwms'],
+                                num:app.userInfo['num']
                             })
                             
                             wx.reLaunch({
@@ -245,7 +245,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const Userinfo=wx.getStorageSync("Userinfo");
+        const userinfo=wx.getStorageSync("userinfo");
         
     },
 
@@ -255,7 +255,7 @@ Page({
     onReady: function () {
         
         // this.setData({
-        //     //Userinfo:app.Userinfo
+        //     //userinfo:app.userInfo
         // });
     },
 
@@ -264,17 +264,17 @@ Page({
      */
     onShow: function () {
         this.getTabBar().init();
-        const Userinfo=wx.getStorageSync("Userinfo");
-        // this.setData({Userinfo});
+        const userinfo=wx.getStorageSync("userinfo");
+        // this.setData({userinfo});
         
-        this.setData({Userinfo,
-            xh:app.Userinfo['xh'],
-            nj:app.Userinfo['nj'],
-            xy:app.Userinfo['xy'],
-            zy:app.Userinfo['zy'],
-            nl:app.Userinfo['nl'],
-            lxfs:app.Userinfo['lxfs'],
-            zwms:app.Userinfo['zwms'],
+        this.setData({userinfo,
+            xh:app.userInfo['xh'],
+            nj:app.userInfo['nj'],
+            xy:app.userInfo['xy'],
+            zy:app.userInfo['zy'],
+            nl:app.userInfo['nl'],
+            lxfs:app.userInfo['lxfs'],
+            zwms:app.userInfo['zwms'],
         });
         
     },

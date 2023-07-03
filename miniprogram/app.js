@@ -4,7 +4,7 @@ App({
       if (wx.cloud) {
         wx.cloud.init({
           traceUser: true,
-          //env:'cloud1',
+          //env:'dsh1999',
         })
       }
       this.globalData = {
@@ -31,6 +31,6 @@ App({
       ],
         
       
-      this.Userinfo = {}
+      this.userInfo = {}
     }  
   })

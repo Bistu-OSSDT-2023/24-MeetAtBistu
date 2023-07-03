@@ -73,13 +73,21 @@
         "scene": null
       },
       {
+<<<<<<< HEAD
         "name": "朋友圈",
+=======
+        "name": "瞬间",
+>>>>>>> 0ccdd661b81651d95e6b5728ab6d249d720edcab
         "pathName": "pages/moments/moments",
         "query": "",
         "scene": null
       },
       {
+<<<<<<< HEAD
         "name": "发布朋友圈",
+=======
+        "name": "创建瞬间",
+>>>>>>> 0ccdd661b81651d95e6b5728ab6d249d720edcab
         "pathName": "pages/create_mom/create_mom",
         "scene": null
       }
@@ -126,13 +134,21 @@
           "scene": null
         },
         {
+<<<<<<< HEAD
           "name": "朋友圈",
+=======
+          "name": "瞬间",
+>>>>>>> 0ccdd661b81651d95e6b5728ab6d249d720edcab
           "pathName": "pages/moments/moments",
           "query": "",
           "scene": null
         },
         {
+<<<<<<< HEAD
           "name": "发布朋友圈",
+=======
+          "name": "创建瞬间",
+>>>>>>> 0ccdd661b81651d95e6b5728ab6d249d720edcab
           "pathName": "pages/create_mom/create_mom",
           "query": "",
           "scene": null
@@ -152,9 +168,15 @@
       ]
     }
   },
+<<<<<<< HEAD
   "appid": "wxe54ec087a91a2832",
   "compileType": "miniprogram",
   "libVersion": "2.25.3",
+=======
+  "appid": "wx1340ed53b0dfc261",
+  "compileType": "miniprogram",
+  "libVersion": "2.32.3",
+>>>>>>> 0ccdd661b81651d95e6b5728ab6d249d720edcab
   "srcMiniprogramRoot": "miniprogram/",
   "packOptions": {
     "ignore": [],

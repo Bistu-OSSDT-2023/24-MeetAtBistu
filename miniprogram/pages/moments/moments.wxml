@@ -1,8 +1,8 @@
 <!--pages/moments/moments.wxml-->
 <view class="cu-bar bg-black search">
-				<view class="cu-avatar round" style="background-image:url({{ UserProfile.avatarUrl }});"></view>
+				<view class="cu-avatar round" style="background-image:url({{ userinfo.avatarUrl }});"></view>
 				<view class="content">
-					Kindred Spirit - 朋友圈
+					Kindred Spirit - 瞬间
 				</view>
 </view>
 

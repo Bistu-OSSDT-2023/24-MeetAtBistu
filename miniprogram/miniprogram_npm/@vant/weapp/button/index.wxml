@@ -18,7 +18,7 @@
   app-parameter="{{ appParameter }}"
   aria-label="{{ ariaLabel }}"
   bindtap="{{ !disabled ? 'onClick' : 'noop' }}"
-  bindgetuserProfile="bindGetUserProfile"
+  bindgetuserinfo="bindGetUserInfo"
   bindcontact="bindContact"
   bindgetphonenumber="bindGetPhoneNumber"
   binderror="bindError"

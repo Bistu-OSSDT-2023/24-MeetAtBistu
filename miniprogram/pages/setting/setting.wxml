@@ -1,8 +1,8 @@
 <!--pages/setting/setting.wxml-->
 <view class="cu-bar bg-black search">
-				<view class="cu-avatar round" style="background-image:url({{Userinfo.avatarUrl}});" ></view>
+				<view class="cu-avatar round" style="background-image:url({{userinfo.avatarUrl}});" ></view>
 				<view class="content">
-					{{Userinfo.nickName}}
+					{{userinfo.nickName}}
 				</view>
 </view>
 
@@ -15,7 +15,7 @@
         width="175px"
         height="175px"
         fit="cover"
-        src="{{Userinfo.avatarUrl}}"
+        src="{{userinfo.avatarUrl}}"
     />
     </view>
 </view>
@@ -122,7 +122,7 @@
     size="large"
     input-align="right"
     disabled
-    value="{{Userinfo.gender==1?'男':'女'}}"
+    value="{{userinfo.gender==1?'男':'女'}}"
     left-icon="contact"
     id="xb"
     bind:change="onChange"
