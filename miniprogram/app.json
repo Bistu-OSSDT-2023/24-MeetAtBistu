@@ -1,5 +1,4 @@
 {
-  "lazyCodeLoading": "requiredComponents",
   "pages": [
     "pages/login/login", 
     "pages/index/index",
@@ -16,7 +15,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Kindred Spirit",
+    "navigationBarTitleText": "Meet At Bistu",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

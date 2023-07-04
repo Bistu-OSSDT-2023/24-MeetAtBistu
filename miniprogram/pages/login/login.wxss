@@ -14,3 +14,10 @@ image[class*="gif-"] {
     padding-top: 90px;
     height: 300px;
 }
+
+.MAT{
+  height:100px;
+  width:100px;
+  margin-right: auto;
+  margin-left: auto;
+}

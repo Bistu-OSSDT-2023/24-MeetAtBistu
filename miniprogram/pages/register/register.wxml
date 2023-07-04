@@ -17,7 +17,7 @@
     label="学号"
     icon="question-o" 
     type = number 
-    placeholder="请输入学号 如2020xxxxxx"
+    placeholder="请输入学号 如2022xxxxxx"
     bind:click-icon="onClickIcon"
     bind:change="onChange"
     bind:blur="onDectError" 
@@ -131,5 +131,7 @@
     <van-button size="large" bindtap="commitInfo"  type="primary">点击提交注册</van-button>
 </view>
 <van-toast id="van-toast" />
+<button bindtap="exit">返回</button>
+
 
 

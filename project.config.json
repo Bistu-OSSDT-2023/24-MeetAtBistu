@@ -73,13 +73,13 @@
         "scene": null
       },
       {
-        "name": "朋友圈",
+        "name": "发现",
         "pathName": "pages/moments/moments",
         "query": "",
         "scene": null
       },
       {
-        "name": "发布朋友圈",
+        "name": "创建发现",
         "pathName": "pages/create_mom/create_mom",
         "scene": null
       }
@@ -126,13 +126,13 @@
           "scene": null
         },
         {
-          "name": "朋友圈",
+          "name": "发现",
           "pathName": "pages/moments/moments",
           "query": "",
           "scene": null
         },
         {
-          "name": "发布朋友圈",
+          "name": "创建发现",
           "pathName": "pages/create_mom/create_mom",
           "query": "",
           "scene": null
@@ -152,9 +152,9 @@
       ]
     }
   },
-  "appid": "wxe54ec087a91a2832",
+  "appid": "wx1340ed53b0dfc261",
   "compileType": "miniprogram",
-  "libVersion": "2.25.3",
+  "libVersion": "2.32.3",
   "srcMiniprogramRoot": "miniprogram/",
   "packOptions": {
     "ignore": [],
@@ -163,7 +163,5 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  },
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
-  "projectname": "vxSocialMinProgram"
+  }
 }

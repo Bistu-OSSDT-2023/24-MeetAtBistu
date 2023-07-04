@@ -7,8 +7,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        Img:"https://images.pexels.com/photos/3662824/pexels-photo-3662824.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        btninfo:"微信用户实名登录",
+        Img:"../../images/MAB.png",
+        btninfo:"微信用户登录",
         //permission:false,
         userinfo:{},
         list: [{
@@ -17,9 +17,9 @@ Page({
         },]
 
     },
-    toggle(e) {
+    toggle(e){
         
-        var anmiaton = e.currentTarget.dataset.class;
+       var anmiaton = e.currentTarget.dataset.class;
         var that = this;
         that.setData({
           animation: anmiaton
@@ -29,6 +29,26 @@ Page({
             animation: ''
           })
         }, 1000)
+        
+       
+      },
+
+      dl(){
+          wx.getUserProfile({
+            desc: 'desc',
+         
+            success: (result) => {
+              console.log("ok")
+            },
+            fail:(result)=>{
+              console.log("no")
+            }
+          })
+          wx.navigateTo({
+            url: '/pages/register/register',
+            success: (result) => {"ok"},
+           
+          })
       },
 
     handleUserInfo:function(e){
@@ -72,7 +92,7 @@ Page({
                
                this.setData({
                 Img:app.globalData['userPhoto'],
-                btninfo:app.globalData['nickName'] + " 现在开始",
+                btninfo:app.globalData['nickName'] + " 开始",
                 //permission:true
                 })
                 app.globalData["permission"] = true
@@ -132,7 +152,7 @@ Page({
         }
         this.setData({
             Img:userinfo.avatarUrl,
-            btninfo:userinfo.nickName + " 现在开始"
+            btninfo: "北信科用户登录"
         })
         app.globalData['permission'] = false;
         
