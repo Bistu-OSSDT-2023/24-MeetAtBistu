@@ -12,15 +12,42 @@ Page({
         userInfo: null,
         //permission:false,
         userinfo:{},
+        userInfo:{},
         list: [{
           name: 'shake',
           color: 'mauve'
-        },]
-       
+        },],
+       nickName:'',
+       avatarUrl:''
     },
-
+    getUserinfo:function(e){
+      var user= e.detail.userInfo;
+      var data = {
+        name:user.nickName,    //微信名
+        avatar:user.avatarUrl,    //微信头像
+        //还可以添加其他需求
+      }
+   
+      //请求登录接口
+      wx.request({url:"登录接口",data:data,method:"POST"}).then(res => {
+        if(res.code === '0'){
+          wx.showToast({
+            title: '登录成功',
+            mask:true
+   
+          })
+          wx.setStorageSync('user',res.data)     //可以把用户数据存储到本地，方便其他文件调用
+        }else{
+          wx.showToast({
+            title: '登录失败',
+            mask:false
+          })
+        }
+      })
+    },
+  
     
-    getuserinfo: function () {
+   /* getuserinfo: function () {
       wx.login({
         success: function (res) {
           // 获取code
@@ -49,7 +76,7 @@ Page({
           
         }
       })
-    },
+    },*/
     toggle(e){
         
        var anmiaton = e.currentTarget.dataset.class;
@@ -158,7 +185,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      
+      app.getUserProfile(userInfo => {
+        this.setData({
+          userInfo: userInfo
+        })
+      })
     },
 
     /**

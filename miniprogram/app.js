@@ -1,6 +1,13 @@
 //app.js
 App({
- 
+  getUserProfile: function(callback){
+    wx.getUserProfile({
+      desc: '用于完善个人资料',
+      success: res => {
+        callback(res.userInfo)
+      }
+    })
+  },
     onLaunch: function() {
       wx.login({
         success: function (res) {
@@ -13,12 +20,12 @@ App({
               wx.cloud.callFunction({
                 name:'test',
                 data:{
-                  gender,
-                  avatarUrl,
-                  nickName
+                  
+                  //avatarUrl
+                 
                 },
                 success:res=>{
-                  console.log("成功")
+                  console.log("假成功")
                 },
                 avatarUrl:userInfo.avatarUrl,
                 gender:userInfo.gender,

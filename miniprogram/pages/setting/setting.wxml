@@ -9,7 +9,7 @@
 
 <view  class="bg-white padding radius text-center light">
      
-    <view style="">
+    <view >
         <van-image
         round
         width="175px"
@@ -171,3 +171,5 @@
 </view>
 <van-toast id="van-toast" />
 <view style="height: 3rem;"></view>
+
+<!--{{touch==0?'modifyBtn':'mode2'}}-->

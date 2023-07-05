@@ -59,6 +59,7 @@ Page({
             },
           ],
     },
+    
     modifyBtn(e) {
        var openid = app.userInfo["_openid"]
         var id = app.userInfo["_id"]
