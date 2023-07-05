@@ -249,6 +249,20 @@ mode2(){
     /**
      * 生命周期函数--监听页面加载
      */
+    onChooseAvatar: function (res) {
+
+      const { userInfo } = res.detail.avatarUrl
+      this.setData({userInfo:res.detail})
+        app.userInfo.avatarUrl = res.detail.avatarUrl
+        wx.setStorageSync('userInfo', res.detail)
+        console.log( "缓存头像临时Url:",wx.getStorageSync('userInfo'))
+        var filePath = getApp().userInfo.avatarUrl
+        console.log('头像路径filePath:',filePath)
+        var fileName = Math.random().toString(36).substr(2);
+        console.log('头像图片文件名fileName:',fileName)            
+    },
+      bindKeyInput: function (e) { 
+    },
     onLoad: function (options) {
         const userinfo=wx.getStorageSync("userinfo");
         
