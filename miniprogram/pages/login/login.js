@@ -9,13 +9,46 @@ Page({
     data: {
         Img:"../../images/MAB.png",
         btninfo:"微信用户登录",
+        userInfo: null,
         //permission:false,
         userinfo:{},
         list: [{
           name: 'shake',
           color: 'mauve'
         },]
+       
+    },
 
+    
+    getuserinfo: function () {
+      wx.login({
+        success: function (res) {
+          // 获取code
+          var code = res.code;
+          wx.getUserInfo({
+            success: function (res) {
+              // 获取到用户信息
+              var userInfo = res.userInfo;
+              wx.cloud.callFunction({
+                name:'test',
+                data:{
+                  gender,
+                  avatarUrl,
+                  nickName
+                },
+                success:res=>{
+                  console.log("成功")
+                },
+                avatarUrl:userInfo.avatarUrl,
+                gender:userInfo.gender,
+                nickName:userInfo.nickName
+                
+              })
+            }
+          })
+          
+        }
+      })
     },
     toggle(e){
         

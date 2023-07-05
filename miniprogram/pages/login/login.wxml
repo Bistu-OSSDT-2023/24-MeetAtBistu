@@ -25,3 +25,12 @@
         </button>
     </view>
 </view>
+<!--<view class="container">
+  <view class="userinfo">
+    <button wx:bindtap="getuserinfo">获取用户信息</button>
+    <view wx:if="{{userInfo}}">
+      <image src="{{userInfo.avatarUrl}}" mode="aspectFit" class="userinfo-avatar"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>-->
