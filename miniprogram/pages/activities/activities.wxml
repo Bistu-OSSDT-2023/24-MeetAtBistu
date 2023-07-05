@@ -46,3 +46,4 @@
 </view>
 <van-toast id="van-toast" />
 <view style="height: 3rem;"></view>
+<View>你好</View>
