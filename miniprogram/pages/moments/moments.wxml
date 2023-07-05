@@ -95,3 +95,20 @@
             +
     </view>
 </view>
+<view>wx.login({
+      success: res => {
+        if (res.code) {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          wx.request({
+            url: 'https://your-backend-api-url.com/login',
+            data: {
+              code: res.code
+            },
+            success: res => {
+              // 获取用户的openid、session_key等信息，保存到全局变量或本地缓存中
+              console.log(res.data)
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }</view>
