@@ -14,20 +14,7 @@ Page({
         activities:[]
     },
 
-    toDetail:function(e){
-        this.setData({
-            userinfo: app.userInfo
-        });
-        
-        app.globalData['target_id']=e.currentTarget.id;
-        //console.log(app.globalData['target_id']); 
-        wx.navigateTo({
-            url: '../act_detail/act_detail',
-          })
-        //  wx.reLaunch({
-        //    url: '../act_detail/act_detail',
-        //  })
-    },
+   
     
 
     /**
@@ -40,7 +27,20 @@ Page({
             cur_act:app.globalData['target_act']
         })
     },
-
+    toDetail:function(e){
+      this.setData({
+          userinfo: app.userInfo
+      });
+      
+      app.globalData['target_id']=e.currentTarget.id;
+      //console.log(app.globalData['target_id']); 
+      wx.navigateTo({
+          url: '../act_detail/act_detail',
+        })
+      //  wx.reLaunch({
+      //    url: '../act_detail/act_detail',
+      //  })
+  },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
