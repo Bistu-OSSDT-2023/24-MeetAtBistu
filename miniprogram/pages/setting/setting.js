@@ -59,7 +59,13 @@ Page({
             },
           ],
     },
-    
+    onShow() {                   
+      this.setData({ 
+        nickName:wx.getStorageSync('nickName'), 
+        userInfo:wx.getStorageSync('userInfo'),
+        mobile:wx.getStorageSync('mobile')
+       })        
+}, 
     modifyBtn(e) {
        var openid = app.userInfo["_openid"]
         var id = app.userInfo["_id"]
