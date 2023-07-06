@@ -15,7 +15,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Kindred Spirit",
+    "navigationBarTitleText": "Meet At Bistu",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
@@ -49,5 +49,19 @@
       }
       
     ]
-  }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请开启位置服务，获取您的位置信息"
+    },
+       "scope.userInfo": {
+      "desc": "请允许小程序获取您的个人信息"
+    }
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+  
 }

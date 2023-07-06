@@ -1,10 +1,12 @@
 <!--pages/login/login.wxml-->
 
 <view  class="bg-white padding radius text-center light">
-    <image  mode="widthFix" src="../../images/login_logo.png"></image>
+    <image  mode="widthFix" src="../../images/MAB.png"></image>
     <!-- <image  mode="widthFix" src="https://i.loli.net/2020/11/24/WvET8u4ZSdXtVBA.png"></image> -->
-    
-    <view style="padding-top:6%">
+  
+
+  <!--微信头像显示-->
+  <!-- <view style="padding-top:6%">
         <van-image
         round
         width="200px"
@@ -12,15 +14,26 @@
         fit="cover"
         src="{{Img}}"
     />
-    </view>
+    </view>-->
 
     <view class="bg-white flex-sub radius shadow-lg">
-    <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
+    <image src="../../images/tubiao.png" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
     </view>
     <view style="padding-top:5%" class="padding flex flex-direction btnlogin">
         <button style="flex-basis:20%;font-size:15px"  class="cu-btn bg-green  button-hover animation-{{animation==item.name?item.name:''}} margin-sm basis-sm shadow" bindtap="toggle" data-class="{{item.name}}" wx:for="{{list}}" wx:key="index"  open-type="getUserInfo" bindgetuserinfo="handleUserInfo" role="button" aria-disabled="false">
             {{btninfo}}
         </button>
     </view>
-    
 </view>
+<!--<view class="container">
+  <view class="userinfo">
+    <button bindtap="getUserinfo" open-type="getUserInfo">获取用户信息</button>
+    <view wx:if="{{userInfo}}">
+      <image src="{{userInfo.avatarUrl}}" mode="aspectFit" class="userinfo-avatar"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+</view>
+
+<!--<image src="{{userInfo.avatarUrl}}" />
+<text>{{userInfo.nickName}}</text>-->

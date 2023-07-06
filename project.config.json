@@ -73,13 +73,13 @@
         "scene": null
       },
       {
-        "name": "瞬间",
+        "name": "发现",
         "pathName": "pages/moments/moments",
         "query": "",
         "scene": null
       },
       {
-        "name": "创建瞬间",
+        "name": "创建发现",
         "pathName": "pages/create_mom/create_mom",
         "scene": null
       }
@@ -126,13 +126,13 @@
           "scene": null
         },
         {
-          "name": "瞬间",
+          "name": "发现",
           "pathName": "pages/moments/moments",
           "query": "",
           "scene": null
         },
         {
-          "name": "创建瞬间",
+          "name": "创建发现",
           "pathName": "pages/create_mom/create_mom",
           "query": "",
           "scene": null

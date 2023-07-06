@@ -8,6 +8,7 @@
   mix-blend-mode: screen;  
 }
 .gif-white{  
+  
   mix-blend-mode: multiply; 
 }
 

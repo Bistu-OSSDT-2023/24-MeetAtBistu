@@ -2,26 +2,19 @@
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 const db = wx.cloud.database();
 const app = getApp();
+const users = db.collection('users');
 const majors = {
-    信息科学与技术学院: ['计算机科学与技术', '人工智能', '软件工程', '电子科学与技术', '通信工程','自动化','轨道交通信号与控制','网络工程','其他'],
+  计算机学院: ['计算机科学与技术','大数据','网络工程','软件工程','计类实验'],
     土木工程学院: ['土木工程', '铁道工程', '道路桥梁与渡河工程', '城市地下空间','其他'],
-    机械工程学院: ['机械设计制造', '能源与动力工程', '车辆工程', '建筑环境与能源应用','测控技术与仪器','工业工程','其他'],
-    电气工程学院: ['电气工程及其自动化', '电子信息工程', '电气工程与智能控制','其他'],
-    经济管理学院: ['会计学','经济学','市场学', '工程与运营管理', '金融与财务学', '信息系统与运营管理','创新创业与管理学','其他'],
-    外国语学院: ['英语', '日语', '德语', '法俄','翻译','工程英语','国际汉语','商务英语','其他'],
-    交通运输与物流学院: ['交通运输', '交通工程', '物流工程', '物流管理','安全工程（运输安全）','其他'],
-    材料科学与工程学院: ['材料科学与工程', '材料成型及控制工程', '生物医学工程','其他'],
-    地球科学与环境工程学院: ['测绘工程', '地理信息科学', '地质工程','环境工程','消防工程','遥感科学与技术','其他'],
-    建筑与设计学院: ['建筑学', '城乡规划', '风景园林', '环境设计','视觉传达设计','产品设计','绘画','其他'],
-    物理科学与技术学院: ['应用物理学', '电子信息科学与技术','其他'],
-    人文学院: ['汉语言文学', '传播学', '广告学', '音乐表演','其他'],
-    公共管理与政法学院: ['公共管理', '政治学与行政学', '法学','其他'],
-    生命科学与工程学院: ['生物工程类', '化学化工', ' 药学','其他'],
-    力学与工程学院: ['工程力学', '飞行器设计与工程','其他'],
-    数学学院: ['数学与应用数学', '统计学', '数据科学与大数据技术','其他'],
-    马克思主义学院: ['思想政治教育','其他'],
-    心理研究与咨询中心: ['应用心理学','其他'],
-    利兹学院: ['土木工程', '机械设计制造', '电子信息工程', '计算机科学与技术','其他'],
+    信息管理学院: ['信息管理与信息系统','信息安全','审计学','电子商务','大数据管理与应用'],
+    机电工程学院: ['机电系统智能感知与控制','机器人技术','智能制造','智能制造',' 智能与新能源汽车技术'],
+    自动化学院: ['自动化专业','电气工程及自动化专业','智能科学与技术专业','人工智能专业'],
+    公共管理与传媒学院: ['行政管理专业','行政管理专业（电子政务）','传播学专业','网络与新媒体专业'],
+    经济管理学院:[],
+    马克思主义学院:[],
+    外国语学院:[],
+    理学院:[],
+    国际交流学院:[],
     其他:['其他']
   };
 Page({
@@ -30,6 +23,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        touch:0,
         oldnj:"",
         oldxy:"",
         oldzy:"",
@@ -45,7 +39,7 @@ Page({
         njbottom: false,
         xybottom: false,
         grades: ['2015','2016','2017','2018','2019','2020'],
-        permmsion:false,
+        permmsion:true,
         disabled:true,
         zwmsdisable:true,
         msg:"修改信息",
@@ -65,9 +59,17 @@ Page({
             },
           ],
     },
+    onShow() {                   
+      this.setData({ 
+        nickName:wx.getStorageSync('nickName'), 
+        userInfo:wx.getStorageSync('userInfo'),
+        mobile:wx.getStorageSync('mobile')
+       })        
+}, 
     modifyBtn(e) {
-        var openid = app.userInfo["_openid"]
+       var openid = app.userInfo["_openid"]
         var id = app.userInfo["_id"]
+      
         
         db.collection('users').where({_openid : openid}).get({}).then(res => {
                //如果查询成功的话  
@@ -87,7 +89,8 @@ Page({
                   this.setData({
                     disabled:true,
                     zwmsdisable: false,
-                    msg:"保存提交"
+                    msg:"保存提交",
+                    touch:1
                 });
                   
               } else{
@@ -96,7 +99,8 @@ Page({
                     this.setData({
                         disabled:false,
                         zwmsdisable: false,
-                        msg:"保存提交"
+                        msg:"保存提交",
+                        touch:1
                     });
                     if(this.data['oldnj'] != this.data['nj']|| this.data['oldxy'] != this.data['xy'] || this.data['oldzy'] != this.data['zy'])
                         this.setData({
@@ -104,6 +108,7 @@ Page({
                         })
                     
                 }
+                
                   if (this.data.permmsion != false)             
                   {   
 
@@ -140,30 +145,36 @@ Page({
                         }
                             this.setData({
                                 permmsion:false,
-                                xh:app.userInfo['xh'],
-                                nj:app.userInfo['nj'],
-                                xy:app.userInfo['xy'],
-                                zy:app.userInfo['zy'],
-                                nl:app.userInfo['nl'],
-                                lxfs:app.userInfo['lxfs'],
-                                zwms:app.userInfo['zwms'],
-                                num:app.userInfo['num']
+                                xh:app.users['xh'],
+                                nj:app.users['nj'],
+                                xy:app.users['xy'],
+                                zy:app.users['zy'],
+                                nl:app.users['nl'],
+                                lxfs:app.users['lxfs'],
+                                zwms:app.users['zwms'],
+                                num:app.users['num']
                             })
                             
-                            wx.reLaunch({
-                                url: '../setting/setting',
-                            });
+                            
                             Toast.success('修改信息成功!');
                            
                     });            
                 })
             }
+        /*    wx.reLaunch({
+              url: '/pages/setting/setting',
+          });*/
                 this.setData({
                     permmsion:true
                 });  
                 
 
     })
+},
+mode2(){
+  wx.reLaunch({
+    url: '/pages/setting/setting',
+})
 },
     onCancel() {          //隐藏选择器
         this.setData({njbottom: false,xybottom: false})  
@@ -244,6 +255,20 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
+    onChooseAvatar: function (res) {
+
+      const { userInfo } = res.detail.avatarUrl
+      this.setData({userInfo:res.detail})
+        app.userInfo.avatarUrl = res.detail.avatarUrl
+        wx.setStorageSync('userInfo', res.detail)
+        console.log( "缓存头像临时Url:",wx.getStorageSync('userInfo'))
+        var filePath = getApp().userInfo.avatarUrl
+        console.log('头像路径filePath:',filePath)
+        var fileName = Math.random().toString(36).substr(2);
+        console.log('头像图片文件名fileName:',fileName)            
+    },
+      bindKeyInput: function (e) { 
+    },
     onLoad: function (options) {
         const userinfo=wx.getStorageSync("userinfo");
         

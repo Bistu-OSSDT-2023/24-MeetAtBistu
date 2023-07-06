@@ -2,7 +2,7 @@
 <view class="cu-bar bg-black search">
 				<view class="cu-avatar round" style="background-image:url({{UserInfo.avatarUrl}});"></view>
 				<view class="content">
-					Kindred Spirit - {{cur_act}}
+					Meet At Bistu - {{cur_act}}
 				</view>
 </view>
 <view wx:if="{{activities.length==0}}">
@@ -30,7 +30,7 @@
             <view class="text-blue text-lg">
               <text class="cuIcon-friend margin-lr-xs"></text> {{item.cyrs}}
               <!-- <text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
-              <text class="cuIcon-messagefill margin-lr-xs"></text> 30 -->
+              <text class="cuIcon-messagefill margin-lr-xs"></text> 30-->
             </view>
           </view>
         </view>

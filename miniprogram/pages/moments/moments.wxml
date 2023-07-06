@@ -2,7 +2,7 @@
 <view class="cu-bar bg-black search">
 				<view class="cu-avatar round" style="background-image:url({{ userinfo.avatarUrl }});"></view>
 				<view class="content">
-					Kindred Spirit - 瞬间
+					Meet At Bistu - 发现
 				</view>
 </view>
 

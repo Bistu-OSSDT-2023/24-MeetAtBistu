@@ -21,7 +21,7 @@ Component({
       {
         "url":"/pages/moments/moments",
         "icon":"notes-o",
-        "text":"瞬间"
+        "text":"发现"
       },
       {
         "url": "/pages/setting/setting",

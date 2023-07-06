@@ -7,19 +7,79 @@ Page({
      * 页面的初始数据
      */
     data: {
-        Img:"https://images.pexels.com/photos/3662824/pexels-photo-3662824.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        btninfo:"微信用户实名登录",
+        Img:"../../images/MAB.png",
+        btninfo:"微信用户登录",
+        userInfo: null,
         //permission:false,
         userinfo:{},
+        userInfo:{},
         list: [{
           name: 'shake',
           color: 'mauve'
-        },]
-
+        },],
+       nickName:'',
+       avatarUrl:''
     },
-    toggle(e) {
+    getUserinfo:function(e){
+      var user= e.detail.userInfo;
+      var data = {
+        name:user.nickName,    //微信名
+        avatar:user.avatarUrl,    //微信头像
+        //还可以添加其他需求
+      }
+   
+      //请求登录接口
+      wx.request({url:"登录接口",data:data,method:"POST"}).then(res => {
+        if(res.code === '0'){
+          wx.showToast({
+            title: '登录成功',
+            mask:true
+   
+          })
+          wx.setStorageSync('user',res.data)     //可以把用户数据存储到本地，方便其他文件调用
+        }else{
+          wx.showToast({
+            title: '登录失败',
+            mask:false
+          })
+        }
+      })
+    },
+  
+    
+   /* getuserinfo: function () {
+      wx.login({
+        success: function (res) {
+          // 获取code
+          var code = res.code;
+          wx.getUserInfo({
+            success: function (res) {
+              // 获取到用户信息
+              var userInfo = res.userInfo;
+              wx.cloud.callFunction({
+                name:'test',
+                data:{
+                  gender,
+                  avatarUrl,
+                  nickName
+                },
+                success:res=>{
+                  console.log("成功")
+                },
+                avatarUrl:userInfo.avatarUrl,
+                gender:userInfo.gender,
+                nickName:userInfo.nickName
+                
+              })
+            }
+          })
+          
+        }
+      })
+    },*/
+    toggle(e){
         
-        var anmiaton = e.currentTarget.dataset.class;
+       var anmiaton = e.currentTarget.dataset.class;
         var that = this;
         that.setData({
           animation: anmiaton
@@ -29,6 +89,26 @@ Page({
             animation: ''
           })
         }, 1000)
+        
+       
+      },
+
+      dl(){
+          wx.getUserProfile({
+            desc: 'desc',
+         
+            success: (result) => {
+              console.log("ok")
+            },
+            fail:(result)=>{
+              console.log("no")
+            }
+          })
+          wx.navigateTo({
+            url: '/pages/register/register',
+            success: (result) => {"ok"},
+           
+          })
       },
 
     handleUserInfo:function(e){
@@ -72,7 +152,7 @@ Page({
                
                this.setData({
                 Img:app.globalData['userPhoto'],
-                btninfo:app.globalData['nickName'] + " 现在开始",
+                btninfo:app.globalData['nickName'] + " 开始",
                 //permission:true
                 })
                 app.globalData["permission"] = true
@@ -105,7 +185,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      
+      app.getUserProfile(userInfo => {
+        this.setData({
+          userInfo: userInfo
+        })
+      })
     },
 
     /**
@@ -132,7 +216,7 @@ Page({
         }
         this.setData({
             Img:userinfo.avatarUrl,
-            btninfo:userinfo.nickName + " 现在开始"
+            btninfo: "北信科用户登录"
         })
         app.globalData['permission'] = false;
         

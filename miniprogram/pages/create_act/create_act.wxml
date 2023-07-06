@@ -3,7 +3,7 @@
 <view class="cu-bar bg-black search">
 				<view class="cu-avatar round" style="background-image:url({{UserInfo.userPhoto}});"></view>
 				<view class="content">
-					Kindred Spirit - 活动创建
+					Meet At Bistu - 活动创建
 				</view>
 </view>
 <van-cell-group>

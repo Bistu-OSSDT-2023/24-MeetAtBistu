@@ -1,6 +1,42 @@
 //app.js
 App({
+  getUserProfile: function(callback){
+    wx.getUserProfile({
+      desc: '用于完善个人资料',
+      success: res => {
+        callback(res.userInfo)
+      }
+    })
+  },
     onLaunch: function() {
+      wx.login({
+        success: function (res) {
+          // 获取code
+          var code = res.code;
+          wx.getUserInfo({
+            success: function (res) {
+              // 获取到用户信息
+              var userInfo = res.userInfo;
+              wx.cloud.callFunction({
+                name:'test',
+                data:{
+                  
+                  //avatarUrl
+                 
+                },
+                success:res=>{
+                  console.log("假成功")
+                },
+                avatarUrl:userInfo.avatarUrl,
+                gender:userInfo.gender,
+                nickName:userInfo.nickName
+                
+              })
+            }
+          })
+          
+        }
+      })
       if (wx.cloud) {
         wx.cloud.init({
           traceUser: true,
@@ -34,3 +70,5 @@ App({
       this.userInfo = {}
     }  
   })
+
+ 
